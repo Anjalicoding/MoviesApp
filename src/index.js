@@ -6,15 +6,15 @@ import "./index.css";
 import App from "./components/App";
 import movies from "./reducers";
 
-const { store } = createStore(movies);
+const store = createStore(movies);
 console.log("store", store);
-console.log("Before State", store.getState());
+// console.log("Before State", store.getState());
 
-store.dispatch({
-  type: "ADD_MOVIES",
-  movies: [{ name: "Superman" }]
-});
+// store.dispatch({
+//   type: "ADD_MOVIES",
+//   movies: [{ name: "Superman" }]
+// });
 
-console.log("After State", store.getState());
+// console.log("After State", store.getState());
 const rootElement = document.getElementById("root");
-ReactDOM.render(<App />, rootElement);
+ReactDOM.render(<App store={store} />, rootElement);
